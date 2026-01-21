@@ -108,6 +108,90 @@ h3 {
   color: #38bdf8;
 }
 
+
+/* Container que permite o deslize suave entre projetos */
+.projects-vertical-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 60px; /* Espaço entre os projetos */
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.project-slide {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr; /* Imagem maior que o texto */
+  gap: 30px;
+  background: rgba(30, 41, 59, 0.4);
+  backdrop-filter: blur(12px);
+  padding: 30px;
+  border-radius: 20px;
+  border: 1px solid rgba(56, 189, 248, 0.1);
+  transition: 0.4s ease;
+}
+
+.project-slide:hover {
+  border-color: #38bdf8;
+  transform: translateY(-5px);
+}
+
+.project-visual {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  height: 300px;
+}
+
+.project-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Efeito de Overlay Profissional */
+.project-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(2, 6, 23, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.project-visual:hover .project-overlay {
+  opacity: 1;
+}
+
+.project-data {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+.project-tag {
+  color: #38bdf8;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.tech-used {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+  filter: grayscale(1); /* Fica cinza por padrão para não distrair */
+  opacity: 0.6;
+}
+
+@media (max-width: 768px) {
+  .project-slide { grid-template-columns: 1fr; }
+}
+
 /* Grid de Tecnologias Centralizado */
 .skills-grid {
   display: flex;
