@@ -90,3 +90,14 @@ footer {
   padding: 30px;
   border-top: 1px solid #1e293b;
 }
+
+/* icones */
+.skills-grid img {
+  transition: transform 0.3s ease;
+  filter: grayscale(20%); /* Opcional: deixa levemente cinza */
+}
+
+.skills-grid img:hover {
+  transform: scale(1.2); /* Aumenta o tamanho */
+  filter: grayscale(0%); /* Volta a cor total */
+}
