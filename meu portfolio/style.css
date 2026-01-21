@@ -91,6 +91,80 @@ footer {
   border-top: 1px solid #1e293b;
 }
 
+a {
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+/* Centralização do Título */
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+h3 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #38bdf8;
+}
+
+/* Grid de Tecnologias Centralizado */
+.skills-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 40px; /* Mais espaço entre ícones */
+  padding: 20px;
+  background: rgba(30, 41, 59, 0.3); /* Fundo leve para destaque */
+  border-radius: 15px;
+  border: 1px solid #1e293b;
+}
+
+.skills-grid img {
+  width: 60px;
+  height: 60px;
+  transition: all 0.3s ease;
+  filter: grayscale(100%) opacity(0.7); /* Efeito profissional: cinza por padrão */
+}
+
+.skills-grid img:hover {
+  transform: scale(1.2) translateY(-10px);
+  filter: grayscale(0%) opacity(1); /* Ganha cor no hover */
+}
+
+/* Melhoria nos Cards de Projetos */
+.project-card {
+  border: 1px solid #1e293b;
+  padding: 30px;
+  border-radius: 12px;
+  background: linear-gradient(145deg, #0f172a, #020617);
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.project-card:hover {
+  border-color: #38bdf8;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px -10px rgba(56, 189, 248, 0.2);
+}
+
+.project-card h4 {
+  color: #38bdf8;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+/* Ajuste do Contato */
+#contact {
+  text-align: center;
+}
+
+#contact a {
+  color: #38bdf8;
+  font-weight: 600;
+}
+
 /* icones */
 .skills-grid img {
   transition: transform 0.3s ease;
