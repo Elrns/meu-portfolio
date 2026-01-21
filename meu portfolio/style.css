@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background: #020617;
+  color: #e5e7eb;
+}
+
+.hero {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #0f172a, #020617);
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 25px 60px;
+}
+
+.logo {
+  font-weight: 700;
+}
+
+.nav-links a {
+  margin-left: 20px;
+  color: #38bdf8;
+}
+
+.hero-content {
+  max-width: 900px;
+  margin: 120px auto;
+  padding: 0 20px;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+}
+
+.hero-content h2 {
+  margin-top: 10px;
+  color: #38bdf8;
+}
+
+.buttons {
+  margin-top: 25px;
+  display: flex;
+  gap: 15px;
+}
+
+.btn {
+  padding: 12px 25px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.primary {
+  background: #38bdf8;
+  color: #020617;
+}
+
+.secondary {
+  border: 1px solid #38bdf8;
+}
+
+section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 80px 20px;
+}
+
+.tech-grid, .projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.tech-grid span, .project-card {
+  border: 1px solid #1e293b;
+  padding: 20px;
+  border-radius: 10px;
+  background: #020617;
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  border-top: 1px solid #1e293b;
+}
