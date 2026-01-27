@@ -21,7 +21,8 @@
 /* BASE */
 body {
   background: #020617;
-  color: #e5e7eb;
+  color: #e5e7eb; 
+  transform: none !important;
 }
 
 a {
@@ -33,12 +34,21 @@ a {
 .hero {
   min-height: 100vh;
   background: radial-gradient(circle at top, #0f172a, #020617);
+   min-height: 100vh;
+  background: radial-gradient(circle at top, #0f172a, #020617);
+
+  display: flex;
+  flex-direction: column;
 }
 
 .nav {
   display: flex;
   justify-content: space-between;
   padding: 25px 60px;
+}
+
+.hero {
+  position: relative;
 }
 
 .logo {
@@ -52,9 +62,8 @@ a {
 
 /* HERO CONTENT */
 .hero-content {
-  max-width: 900px;
-  margin: 120px auto;
-  padding: 0 20px;
+max-width: 520px;
+margin: 120px 0 0 10%;
 }
 
 .hero-content h1 {
@@ -66,16 +75,84 @@ a {
   color: #38bdf8;
 }
 
+/* IMAGEM */
+.right {
+  position: absolute;
+  right: 10%;
+  top: 50%;
+  transform: translateY(-40%);
+}
+
+.right img {
+  width: 280px;
+  height: 360px;
+
+  object-fit: cover;
+
+  border-radius: 140px; /* oval elegante */
+  background: #7a2e3a;
+
+  box-shadow: 
+    0 25px 60px rgba(0, 0, 0, 0.45),
+    inset 0 0 0 4px rgba(255,255,255,0.05);
+}
+
 .buttons {
-  margin-top: 25px;
   display: flex;
-  gap: 15px;
+  gap: 20px;
+  margin-top: 30px;
 }
 
 .btn {
-  padding: 12px 25px;
-  border-radius: 6px;
+ padding: 14px 28px;
+  font-size: 16px;
   font-weight: 600;
+  text-decoration: none;
+  border-radius: 30px;
+  background: #111;
+  color: #fff;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover principal */
+.btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  background: #000;
+}
+
+/* Botão alternativo (GitHub) */
+.btn-outline {
+  background: transparent;
+  border: 2px solid #111;
+  color: #111;
+}
+
+.btn-outline:hover {
+  background: #111;
+  color: #fff;
+}
+
+.btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.btn:hover::after {
+  left: 100%;
 }
 
 .primary {
@@ -254,20 +331,369 @@ h3 {
   font-weight: 600;
 }
 
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 30px;
-  border-top: 1px solid #1e293b;
+
+
+/* LINKEDIN FIXO — TECH / DEV */
+.linkedin-fixed {
+  background: #0a66c2; /* azul oficial LinkedIn */
+  color: #fff;
+  font-weight: 800;
+   position: fixed;
+  bottom: 20px;
+  right: 20px; /* lado direito */
+  width: 48px;
+  height: 48px;
+
+  background-color: #0A66C2; /* azul LinkedIn */
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: bold;
+  font-size: 20px;
+  font-family: Arial, sans-serif;
+
+  border-radius: 50%;
+  text-decoration: none;
+
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  z-index: 9999;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* RESPONSIVO */
-@media (max-width: 768px) {
-  .nav {
-    padding: 25px 20px;
-  }
+.linkedin-fixed:hover {
+   transform: scale(1.1);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.4);
 
-  .project-slide {
-    grid-template-columns: 1fr;
-  }
+  border-color: #38bdf8;
+
+  box-shadow:
+    0 0 25px rgba(56, 189, 248, 0.45),
+    0 25px 60px rgba(0, 0, 0, 0.9);
+}
+
+.linkedin-fixed.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+
+
+.animate {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.7s ease;
+}
+
+.animate.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.nav.scrolled {
+  background: rgba(2, 6, 23, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(56,189,248,0.15);
+}
+
+
+
+
+/* FOOTER */
+.footer {
+  width: 100%;
+  padding: 25px 15px;
+  margin-top: 80px;
+
+  background: linear-gradient(135deg, #0a0f1c, #020617);
+  color: #9ca3af;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+
+  font-size: 14px;
+  text-align: center;
+}
+
+.footer span {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.footer-tech {
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #64748b;
+}
+
+/* CONTATOS */
+.contact {
+  max-width: 900px;
+  margin: 120px auto 0;
+  padding: 0 20px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.contact h3 {
+  font-size: 28px;
+  color: #ffffff;
+}
+
+.contact-items {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+
+  padding: 18px 22px;
+  border-radius: 16px;
+
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.contact-item svg {
+  width: 28px;
+  height: 28px;
+  stroke: #38bdf8;
+  fill: none;
+  stroke-width: 1.5;
+}
+
+.contact-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-item .label {
+  font-size: 13px;
+  color: #94a3b8;
+}
+
+.contact-item .value {
+  font-size: 15px;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.contact-item:hover {
+  transform: translateY(-3px);
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(56,189,248,0.4);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+.hero-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 120px 20px;
+  gap: 60px;
+}
+
+/* TEXTO */
+.hero-content {
+  max-width: 520px;
+  margin: 0;
+}
+
+/* IMAGEM */
+.right img {
+  width: 260px;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 50%;
+  background: #fff;
+  padding: 6px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+}
+
+.profile-info {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+/* TEXTO AO LADO DA IMAGEM */
+.profile-text {
+  max-width: 220px;
+  text-align: right;
+}
+
+.profile-text h3 {
+  font-size: 1.1rem;
+  color: #38bdf8;
+  margin-bottom: 8px;
+}
+
+.profile-text p {
+  font-size: 0.95rem;
+  color: #a1a1aa;
+  line-height: 1.4;
+}
+
+/* IMAGEM (mantém profissional) */
+.right img {
+  width: 260px;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 50%;
+  background: #fff;
+  padding: 6px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+}
+
+
+/* RESPONSIVO */
+/* --- AJUSTES DE RESPONSIVIDADE UNIVERSAL --- */
+
+/* 1. Ajuste no Hero para Mobile */
+.hero-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: clamp(60px, 10vh, 120px) 20px; /* Padding fluido */
+    gap: 40px;
+}
+
+@media (max-width: 968px) {
+    .hero-wrapper {
+        flex-direction: column; /* Empilha o conteúdo */
+        text-align: center;
+        padding-top: 40px;
+    }
+
+    .hero-content {
+        margin: 0;
+        max-width: 100%;
+        order: 2; /* Texto vai para baixo da foto */
+    }
+
+    .hero-content h1 {
+        font-size: clamp(2rem, 8vw, 3rem); /* Título diminui no celular */
+    }
+
+    .buttons {
+        justify-content: center;
+    }
+
+    .right {
+        position: relative; /* Sai do absolute para não flutuar sobre o texto */
+        right: auto;
+        top: auto;
+        transform: none;
+        order: 1; /* Foto vai para cima */
+    }
+}
+
+/* 2. Ajuste da Imagem de Perfil */
+.profile-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+@media (max-width: 600px) {
+    .profile-info {
+        flex-direction: column; /* Texto e foto empilhados */
+    }
+
+    .profile-text {
+        text-align: center;
+        max-width: 100%;
+        order: 2;
+    }
+
+    .right img {
+        width: 200px; /* Tamanho fixo menor para celular */
+        height: 200px;
+        order: 1;
+    }
+}
+
+/* 3. Grid de Projetos Fluido */
+.projects-vertical-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.project-slide {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr; /* Padrão Desktop */
+    gap: 20px;
+    padding: 20px;
+}
+
+@media (max-width: 850px) {
+    .project-slide {
+        grid-template-columns: 1fr; /* Vira coluna única no tablet/celular */
+    }
+    
+    .project-visual {
+        aspect-ratio: 16/9; /* Garante que a imagem não suma */
+    }
+}
+
+/* 4. Menu e Navegação */
+@media (max-width: 600px) {
+    .nav {
+        padding: 20px;
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .nav-links a {
+        margin: 0 10px;
+        font-size: 0.9rem;
+    }
+}
+
+/* 5. Prevenção de quebra lateral (iOS Fix) */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+}
+
+/* 6. Ajuste de toque para Android/iOS */
+.btn, .nav-links a, .linkedin-fixed {
+    min-height: 44px; /* Tamanho mínimo recomendado pela Apple/Google para clique */
+    display: inline-flex;
+    align-items: center;
 }

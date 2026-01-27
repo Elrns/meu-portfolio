@@ -10,9 +10,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  
+
 </head>
 <body>
 
+  
 <header class="hero">
   <nav class="nav">
     <span class="logo">Renan.dev</span>
@@ -23,15 +28,36 @@
     </div>
   </nav>
 
-  <div class="hero-content">
-    <h1>Renan Sia Orlandini</h1>
-    <h2>Frontend Developer</h2>
-    <p>Criando interfaces modernas, responsivas e funcionais.</p>
+  <div class="hero-wrapper">
 
-    <div class="buttons">
-      <a href="#projects" class="btn primary">Ver projetos</a>
-      <a href="https://github.com/Elrns/Elrns" target="_blank" class="btn secondary">GitHub</a>
+    <!-- TEXTO À ESQUERDA -->
+    <div class="hero-content">
+      <h1>Renan Sia Orlandini</h1>
+      <h2>Frontend Developer</h2>
+      <p>Criando interfaces modernas, responsivas e funcionais.</p>
+
+      <div class="buttons">
+        <a href="#projects" class="btn primary">Ver projetos</a>
+        <a href="https://github.com/Elrns/Elrns" target="_blank" class="btn secondary">GitHub</a>
+      </div>
     </div>
+
+    <!-- IMAGEM À DIREITA -->
+   <div class="right">
+  <div class="profile-info">
+    <div class="profile-text">
+      <h3>Desenvolvedor Frontend</h3>
+      <p>
+        Focado em interfaces modernas, performance e
+        boas práticas de desenvolvimento web.
+      </p>
+    </div>
+
+    <img src="imagens/perfil.png" alt="Minha foto">
+  </div>
+</div>
+
+
   </div>
 </header>
 
@@ -43,6 +69,7 @@
     e boas práticas.
   </p>
 </section>
+
 
 <section id="skills">
   <div class="section-title">
@@ -137,15 +164,46 @@
 </section>
 
 
-<section id="contact">
-  <h3>Contato</h3>
-  <p>Email: <a href="mailto:Renansiaorlandini4@gmail.com">Renansiaorlandini4@gmail.com</a></p>
-  <p>Instagram: <a href="https://www.instagram.com/renansia150/" target="_blank">@renansia150</a></p>
+<section id="contact" class="contact reveal">
+  <a href="contact.html">Contato</a>
 </section>
 
-<footer>
-  <p>© 2026 Renan Sia Orlandini</p>
+
+
+
+
+<footer class="footer">
+  <p>
+    © 2026 — Desenvolvido por 
+    <span>Renan Sia Orlandini</span>
+  </p>
+
+  <p class="footer-tech">
+    Tech • Dev • Front-end
+  </p>
 </footer>
 
+
+<!-- FOTO FIXA EMBAIXO -->
+  <a
+  href="https://www.linkedin.com/in/renan-sia-orlandini-3489a4304/"
+  target="_blank"
+  class="linkedin-fixed"
+>
+  in
+</a>
+
+
+<!-- Scripts -->
+<script src="assests/js/linkedin.js"></script>
+<script src="assests/js/nav.bar.js"></script>
+<script src="assests/js/reveal.js"></script>
+<script src="assests/js/scroll.js"></script>
+<script src="assests/js/smoothScroll.js"></script>
+<script src="assests/js/script.js"></script>
 </body>
+
+
 </html>
+
+
