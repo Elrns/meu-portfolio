@@ -33,6 +33,7 @@ a {
 /* HERO */
 .hero {
   min-height: 100vh;
+  min-height: -webkit-fill-available;
   background: radial-gradient(circle at top, #0f172a, #020617);
    min-height: 100vh;
   background: radial-gradient(circle at top, #0f172a, #020617);
@@ -707,5 +708,56 @@ html, body {
         width: 100%; /* No celular o botão ocupa a largura toda para facilitar o clique */
         padding: 14px 20px;
     }
+}
+
+/* ===== AJUSTES EXCLUSIVOS PARA IOS ===== */
+@supports (-webkit-touch-callout: none) {
+
+  /* HERO */
+  .hero {
+    min-height: -webkit-fill-available;
+  }
+
+  .hero-wrapper {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  /* IMAGEM */
+  .right {
+    position: relative;
+    top: auto;
+    right: auto;
+    transform: none;
+  }
+
+  .right img {
+    width: 220px;
+    height: 220px;
+  }
+
+  /* TEXTO */
+  .hero-content {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  /* BOTÕES */
+  .buttons {
+    justify-content: center;
+  }
+}
+
+body.ios .hero {
+  min-height: -webkit-fill-available;
+}
+
+body.ios .right {
+  position: relative;
+  transform: none;
+}
+
+body.ios .hero-content {
+  text-align: center;
 }
 
