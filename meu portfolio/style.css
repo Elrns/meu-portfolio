@@ -333,53 +333,7 @@ h3 {
 
 
 
-/* LINKEDIN FIXO — TECH / DEV */
-.linkedin-fixed {
-  background: #0a66c2; /* azul oficial LinkedIn */
-  color: #fff;
-  font-weight: 800;
-   position: fixed;
-  bottom: 20px;
-  right: 20px; /* lado direito */
-  width: 48px;
-  height: 48px;
 
-  background-color: #0A66C2; /* azul LinkedIn */
-  color: white;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  font-weight: bold;
-  font-size: 20px;
-  font-family: Arial, sans-serif;
-
-  border-radius: 50%;
-  text-decoration: none;
-
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  z-index: 9999;
-
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.linkedin-fixed:hover {
-   transform: scale(1.1);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.4);
-
-  border-color: #38bdf8;
-
-  box-shadow:
-    0 0 25px rgba(56, 189, 248, 0.45),
-    0 25px 60px rgba(0, 0, 0, 0.9);
-}
-
-.linkedin-fixed.show {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateY(0);
-}
 
 
 
@@ -725,7 +679,7 @@ html, body {
 /* O BOTÃO EM SI */
 .btn-contact {
     display: inline-block;
-    background: #38bdf8;
+    background: rgba(0, 0, 0, 0);
     color: #020617;
     padding: 16px 40px;
     border-radius: 100px; /* Botão arredondado estilo pílula */
@@ -754,3 +708,4 @@ html, body {
         padding: 14px 20px;
     }
 }
+
